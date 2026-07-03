@@ -1,0 +1,191 @@
+1) Check if a Number is Prime or not.
+input = 5
+output = Prime
+
+input = 21
+output = Not Prime
+
+=====================================
+Solution:
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int temp=0;
+        for(int i=1;i<=n;i++){
+        if(n%i==0){
+          temp++;
+    }
+}
+if(temp==2){
+    System.out.println("Prime");
+}
+else{
+    System.out.println("Not prime");
+}
+}}
+
+2) Convert Integer into Binary value
+input = 4      output = 100
+input = 8      output = 1000
+input = 10    output = 1010
+input = 3      output = 11
+Solution:
+
+Solution:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int decimal = 0;
+        int i = 1;
+        
+        while (num > 0) {
+            int rem = num % 10;
+            decimal = decimal + (rem * i);
+            i = i * 2;
+            num = num / 10; 
+        }
+        System.out.println(decimal);
+    }
+}
+
+3)Print all Prime Numbers between the range
+
+Input: start = 1, end = 10
+Output: 2 3 5 7
+
+Input : start = 10, end = 20
+Output : 11 13 17 19
+
+Solution:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        
+        for (int i = start; i <= end; i++) {
+            int count = 0;
+            
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            } 
+            
+           
+            if (count == 2) {
+                System.out.println(i);
+            }
+        } 
+    }
+}
+
+4) Print nth Prime Number
+	input = 5
+	output = 11
+
+	input = 7
+	output = 17
+Solution:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int count = 0;
+        int num = 2;
+
+        while (count < n) {
+
+            int divisor = 0;
+
+            for (int i = 1; i <= num; i++) {
+                if (num % i == 0) {
+                    divisor++;
+                }
+            }
+
+            if (divisor == 2) {
+                count++;
+            }
+
+            if (count == n) {
+                System.out.println(num);
+            }
+
+            num++;
+        }
+    }
+}
+
+5) Print all 3 digit Armstrong number
+Solution:
+
+public class Main {
+    public static void main(String[] args) {
+
+        for (int num = 100; num <= 999; num++) {
+
+            int temp = num;
+            int sum = 0;
+
+            while (temp > 0) {
+
+                int rem = temp % 10;
+                sum = sum + (rem * rem * rem);
+                temp = temp / 10;
+            }
+
+            if (sum == num) {
+                System.out.println(num);
+            }
+        }
+    }
+}
+
+6) Return a single digit of sum of number
+	input = 657
+	output = 9
+
+	input = 87
+	output = 6
+
+n = 87
+( (n-1) % 9 ) + 1
+Solution:
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        while (n >= 10) {
+
+            int sum = 0;
+
+            while (n > 0) {
+                int rem = n % 10;
+                sum = sum + rem;
+                n = n / 10;
+            }
+
+            n = sum;
+        }
+
+        System.out.println(n);
+    }
+}
